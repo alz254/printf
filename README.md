@@ -23,7 +23,7 @@ Write a function that produces output according to a format.
 * You don’t have to handle precision
 * You don’t have to handle the length modifiers
 
-# Repo:
+##Repo:
     GitHub repository: printf
 ---
 _1. Education is when you read the fine print. Experience is what you get if you don't_
