@@ -28,8 +28,8 @@ Write a function that produces output according to a format.
 ---
 _1. Education is when you read the fine print. Experience is what you get if you don't_
 Write a function that prints numbers, followed by a new line.
-      * d
-      * i
+ *d
+ *i
 * You don’t have to handle the flag characters
 * You don’t have to handle field width
 * You don’t have to handle precision
