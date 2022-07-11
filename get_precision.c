@@ -13,7 +13,7 @@
  */
 int handle_precision(va_list args, const char *modifier, char *index)
 {
-	int value = 0;
+	int precision = 0;
 
 	if (*modifier != '.')
 		return (-1);
@@ -36,16 +36,16 @@ int handle_precision(va_list args, const char *modifier, char *index)
 
 		if (*modifier == '*')
 		{
-			value = va_arg(args, int);
+			precision = va_arg(args, int);
 			if (value <= 0)
 				return (0);
-			return (value);
+			return (precision);
 		}
 
-		value *= 10;
-		value += (*modifier - '0');
+		precision *= 10;
+		precision += (*modifier - '0');
 		modifier++;
 	}
 
-	return (value);
+	return (precision);
 }
