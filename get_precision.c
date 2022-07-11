@@ -5,13 +5,13 @@
  *                    its corresponding value.
  * @args: A va_list of arguments.
  * @modifier: A pointer to a potential precision modifier.
- * @index: An index counter for the original format string.
+ * @i: An index counter for the original format string.
  *
  * Return: If a precision modifier is matched - its value.
  *         If the precision modifier is empty, zero, or negative - 0.
  *         Otherwise - -1.
  */
-int handle_precision(va_list args, const char *modifier, char *index)
+int handle_precision(va_list args, const char *modifier, int *i)
 {
 	int precision = 0;
 
@@ -19,20 +19,20 @@ int handle_precision(va_list args, const char *modifier, char *index)
 		return (-1);
 
 	modifier++;
-	(*index)++;
+	(*i)++;
 
 	if ((*modifier <= '0' || *modifier > '9') &&
 	     *modifier != '*')
 	{
 		if (*modifier == '0')
-			(*index)++;
+			(*i)++;
 		return (0);
 	}
 
 	while ((*modifier >= '0' && *modifier <= '9') ||
 	       (*modifier == '*'))
 	{
-		(*index)++;
+		(*i)++;
 
 		if (*modifier == '*')
 		{
